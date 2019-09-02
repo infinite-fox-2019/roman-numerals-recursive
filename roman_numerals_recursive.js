@@ -1,6 +1,36 @@
 function toRoman(input) {
-  // start your code here
-  return to_roman(input);
+  // exception handling
+  if (input === undefined) {
+    return input;
+  }
+
+  // base case
+  if (input === 0) {
+    return '';
+  }
+
+  var romanIndex = 
+  {
+    M: 1000,
+    CM: 900,
+    D: 500,
+    CD: 400,
+    C: 100,
+    XC: 90,
+    L: 50,
+    XL: 40,
+    X: 10,
+    IX: 9,
+    V: 5,
+    IV: 4,
+    I: 1
+  }
+  
+  for (var key in romanIndex) {
+    if (input >= romanIndex[key]) {
+      return key + toRoman(input - romanIndex[key])
+    }
+  }
 }
 
 console.log('My totally sweet testing script for new roman\n')
