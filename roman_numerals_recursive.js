@@ -1,6 +1,18 @@
 function toRoman(input) {
   // start your code here
-  return to_roman(input);
+  var hasil = ''
+  var ref = [[1000, 'M'], [900, 'CM'],[500, 'D'], [400, 'CD'], [100, 'C'], [50, 'L'],[40, 'XL'], [10, 'X'],[9, 'IX'], [5, 'V'],[4,'IV'], [1, 'I'] ]
+
+  if(input == 0){
+    return hasil
+  } else {
+      for(var i = 0; i < ref.length; i++){
+          if(Math.floor(input - ref[i][0]) >= 0){
+            hasil += ref[i][1]
+            return hasil + toRoman(input - ref[i][0]);
+          }
+      }
+  }
 }
 
 console.log('My totally sweet testing script for new roman\n')
