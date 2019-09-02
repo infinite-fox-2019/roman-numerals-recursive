@@ -1,6 +1,20 @@
 function toRoman(input) {
   // start your code here
-  return to_roman(input);
+
+  var array = [[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']]
+  var str = ''
+  
+  if(input>3000) return 'invalid number'
+
+  if(input == 0)
+  return ''
+
+    for(var i = 0; i<array.length;i++){
+      if (input >= array[i][0] ){
+      str +=array[i][1]
+      return str + toRoman(input-array[i][0]);
+      }
+    }
 }
 
 console.log('My totally sweet testing script for new roman\n')
